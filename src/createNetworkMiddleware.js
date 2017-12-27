@@ -22,6 +22,27 @@ type Arguments = {|
   actionTypes: Array<string>,
 |};
 
+const checkType = (regexActionType, actionTypes, type) =>
+  regexActionType.test(type) || actionTypes.includes(type);
+
+const testActionObject = (regexActionType, actionTypes, action) => {
+  if (action.interceptInOffline === true) {
+    return true;
+  }
+
+  if (action.type) {
+    return checkType(regexActionType, actionTypes, action.type);
+  }
+
+  if (action.types) {
+    return action.types.every(type =>
+      checkType(regexActionType, actionTypes, type),
+    );
+  }
+
+  return false;
+};
+
 function createNetworkMiddleware(
   { regexActionType = /FETCH.*REQUEST/, actionTypes = [] }: Arguments = {},
 ) {
@@ -38,7 +59,7 @@ function createNetworkMiddleware(
 
     const isObjectAndMatchCondition =
       typeof action === 'object' &&
-      (regexActionType.test(action.type) || actionTypes.includes(action.type));
+      testActionObject(regexActionType, actionTypes, action);
 
     const isFunctionAndMatchCondition =
       typeof action === 'function' && action.interceptInOffline === true;
