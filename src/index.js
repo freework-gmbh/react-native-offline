@@ -14,4 +14,10 @@ module.exports = {
   get offlineActionTypes() {
     return require('./actionTypes').default;
   },
+  get actionCreators() {
+    return require('./actionCreators').default;
+  },
+  get types() {
+    return require('./types').default;
+  },
 };
