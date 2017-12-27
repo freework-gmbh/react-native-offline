@@ -1,5 +1,5 @@
 {
-  "name": "react-native-offline",
+  "name": "@freework/react-native-offline",
   "version": "3.5.1",
   "description": "Handy toolbelt to deal with offline mode in React Native applications. Cross-platform, provides a smooth redux integration.",
   "main": "./src/index.js",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rauliyohmc/react-native-offline.git"
+    "url": "git+https://github.com/freework-gmbh/react-native-offline.git"
   },
   "keywords": [
     "react-native",
@@ -30,9 +30,9 @@
     "src"
   ],
   "bugs": {
-    "url": "https://github.com/rauliyohmc/react-native-offline/issues"
+    "url": "https://github.com/freework-gmbh/react-native-offline/issues"
   },
-  "homepage": "https://github.com/rauliyohmc/react-native-offline#readme",
+  "homepage": "https://github.com/freework-gmbh/react-native-offline#readme",
   "devDependencies": {
     "babel-eslint": "^7.2.1",
     "babel-jest": "^19.0.0",
