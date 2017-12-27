@@ -22,10 +22,7 @@ export const fetchOfflineMode = (
     return {
       type: actionTypes.FETCH_OFFLINE_MODE,
       payload: {
-        prevAction: {
-          type: action.type,
-          payload: action.payload,
-        },
+        prevAction: action,
       },
       meta: action.meta || {},
     };
